@@ -1,7 +1,6 @@
 altgraph==0.17.4
 annotated-types==0.7.0
 anyio==4.6.2.post1
-apturl==0.5.2
 argcomplete==3.5.2
 attrs==24.2.0
 bcrypt==3.2.0
