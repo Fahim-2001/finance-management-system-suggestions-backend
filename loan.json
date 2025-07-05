@@ -1,0 +1,78 @@
+{
+    "id": 2,
+    "loan_type": "Business Loan",
+    "lender_name": "Brac Bank",
+    "principal_amount": 200000,
+    "total_payable": 224000,
+    "total_paid": 110000,
+    "due": 114000,
+    "interest_rate": 12,
+    "number_of_payments": 12,
+    "remaining_payments": 2,
+    "start_date": "2025-01-05T10:30:00Z",
+    "end_date": "2026-01-05T23:59:59Z",
+    "next_payment_date": "2025-06-29T14:00:00.000Z",
+    "payment_frequency": "BiWeekly",
+    "status": "Active",
+    "notes": "For small business expansion",
+    "created_at": "2025-06-29 22:23:32",
+    "updated_at": "2025-06-29 22:23:32",
+    "user_id": 1,
+    "payments": [
+        {
+            "id": 6,
+            "payment_date": "2025-01-15T14:00:00.000Z",
+            "amount_paid": 10000,
+            "principal_paid": 9953.846,
+            "interest_paid": 46.154,
+            "remaining_balance": 154000,
+            "notes": "First biweekly payment",
+            "created_at": "2025-06-29 22:30:03",
+            "loan_id": 2
+        },
+        {
+            "id": 7,
+            "payment_date": "2025-01-29T14:00:00.000Z",
+            "amount_paid": 10000,
+            "principal_paid": 9953.846,
+            "interest_paid": 46.154,
+            "remaining_balance": 144000,
+            "notes": "Second biweekly payment",
+            "created_at": "2025-06-29 22:30:03",
+            "loan_id": 2
+        },
+        {
+            "id": 8,
+            "payment_date": "2025-02-12T14:00:00.000Z",
+            "amount_paid": 10000,
+            "principal_paid": 9953.846,
+            "interest_paid": 46.154,
+            "remaining_balance": 134000,
+            "notes": "Third biweekly payment",
+            "created_at": "2025-06-29 22:30:04",
+            "loan_id": 2
+        },
+        {
+            "id": 9,
+            "payment_date": "2025-02-26T14:00:00.000Z",
+            "amount_paid": 10000,
+            "principal_paid": 9953.846,
+            "interest_paid": 46.154,
+            "remaining_balance": 124000,
+            "notes": "Fourth biweekly payment",
+            "created_at": "2025-06-29 22:30:05",
+            "loan_id": 2
+        },
+        {
+            "id": 10,
+            "payment_date": "2025-03-12T14:00:00.000Z",
+            "amount_paid": 10000,
+            "principal_paid": 9953.846,
+            "interest_paid": 46.154,
+            "remaining_balance": 114000,
+            "notes": "Fifth biweekly payment",
+            "created_at": "2025-06-29 22:30:05",
+            "loan_id": 2
+        }
+    ]
+}
