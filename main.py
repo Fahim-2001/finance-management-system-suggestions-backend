@@ -10,12 +10,19 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI(title="Loan Management API", version="1.0.0")
 
 # Enable CORS
+origins = [
+    "http://localhost:5173",  
+    "http://localhost",       
+    "http://127.0.0.1:5173", 
+    "https://finance-management-system-frontend-capstone.vercel.app/"
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,  # List of allowed origins
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],    # Allow all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],    # Allow all headers
 )
 
 
