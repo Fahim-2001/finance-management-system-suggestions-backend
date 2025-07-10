@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from app.models.income import Income, IncomeSuggestionResponse, IncomeSuggestions
 from app.models.loan import Loan, LoanSuggestion
 from app.services.income import IncomeService
@@ -31,16 +31,14 @@ async def optimize_payments(loans: List[Loan]):
 
 
 @app.post("/income/suggestions/", response_model=IncomeSuggestions)
-async def income_suggestions(incomes: list[Income]):
-    diversification = IncomeService.get_diversification_suggestion(incomes)
-    optimal_savings = IncomeService.get_savings_allocation(incomes)
-    income_boost = IncomeService.get_income_boost_recommendation(incomes)
-    suggestions = []
-    suggestions.append(diversification)
-    suggestions.append(optimal_savings)
-    suggestions.append(income_boost)
-    print(suggestions)
-    return suggestions
+async def get_income_suggestions(incomes: list[Income]):
+    try:
+        suggestions = IncomeService.get_income_suggestions(incomes)
+        return suggestions
+    except HTTPException as e:
+        raise e
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Unexpected error: {str(e)}")
 
 
 @app.get("/health")
