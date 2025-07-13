@@ -20,7 +20,7 @@ origins = [
     "http://localhost:5173",
     "http://localhost",
     "http://127.0.0.1:5173",
-    "https://finance-management-system-frontend-capstone.vercel.app/"
+    "https://finance-management-system-frontend-capstone.vercel.app"
 ]
 
 app.add_middleware(
