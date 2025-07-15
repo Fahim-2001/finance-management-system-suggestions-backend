@@ -19,7 +19,6 @@ pandas==2.3.0
 
 pydantic==2.10.2
 pydantic_core==2.27.1
-PyGObject==3.42.1
 
 python-dateutil==2.9.0.post0
 
