@@ -7,10 +7,13 @@ from app.models.income import Income, IncomeSuggestionResponse, IncomeSuggestion
 from app.models.loan import Loan, LoanSuggestion
 from app.models.expense import Expense, ExpenseSuggestions
 from app.models.savings import SavingsGoal
+from app.models.budget import Budget, BudgetSuggestion
 from app.services.income import IncomeService
-from app.services.loan import generate_payment_optimization
 from app.services.expense import ExpenseService
 from app.services.savings import predict_monthly_savings, suggest_expense_cuts, forecast_savings_growth
+from app.services.loan import generate_payment_optimization
+from app.services.budget import BudgetService
+
 
 
 app = FastAPI(title="Loan Management API", version="1.0.0")
@@ -83,6 +86,9 @@ async def get_suggestions(goals: List[SavingsGoal]):
         raise HTTPException(status_code=404, detail="No suggestions available")
     return {"suggestions": suggestions}
 
+@app.post("/budget/suggestions/", response_model=List[BudgetSuggestion])
+async def fetch_suggestions(budgets: List[Budget]):
+    return BudgetService.get_budget_suggestions(budgets)
 
 @app.get("/health")
 async def health_check():
