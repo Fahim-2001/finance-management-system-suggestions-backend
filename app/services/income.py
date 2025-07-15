@@ -46,10 +46,10 @@ class IncomeService:
             savings_amount = total_income * savings_rate
             remaining_income = total_income - savings_amount
             suggestions.append(IncomeSuggestionResponse(
-                suggestion=f"Based on your total income of ${total_income:.2f}, we recommend saving "
-                f"${savings_amount:.2f} ({savings_rate*100:.0f}%). Consider allocating this to a "
+                suggestion=f"Based on your total income of BDT{total_income:.2f}, we recommend saving "
+                f"BDT{savings_amount:.2f} ({savings_rate*100:.0f}%). Consider allocating this to a "
                 f"high-yield savings account or low-risk investment. You can use the remaining "
-                f"${remaining_income:.2f} for expenses and discretionary spending."
+                f"BDT{remaining_income:.2f} for expenses and discretionary spending."
             ))
 
             # 3. Income Boost Recommendation
@@ -72,7 +72,7 @@ class IncomeService:
                         suggestions_list.append("Take on additional freelance projects or upskill in a high-demand area like AI/ML.")
                     suggestions_list.append("Explore side gigs such as tutoring or online content creation.")
                     suggestions.append(IncomeSuggestionResponse(
-                        suggestion=f"Your income in {min_month} was low at ${min_amount:.2f}. "
+                        suggestion=f"Your income in {min_month} was low at BDT{min_amount:.2f}. "
                         f"Consider {', '.join(suggestions_list[:-1])} or {suggestions_list[-1]} to boost earnings."
                     ))
                 else:
